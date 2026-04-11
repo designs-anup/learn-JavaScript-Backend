@@ -1,3 +1,19 @@
+/* 
+Note Js Course Outline
+
+- [ ] Install Express and Create a Basic Server
+- [ ] Get Routes (Send Message to the Front-End)
+- [ ] JSON (Send Data to the Front-End)
+- [ ] Route Parameters
+- [ ] Connect a Front-End to the Express Server
+- [ ] Fix CORS Problems
+- [ ] POST Routes
+- [ ] Send From Data to the Back-End
+- [ ] Express Router
+- [ ] Advanced Routing
+- [ ] Middleware
+*/
+
 const express = require('express')
 const app = express()
 
@@ -31,6 +47,10 @@ app.get('/products/:id', (req, res) => {
     const requestedProduct = products.find( (product) => product.id === id )
 
     res.json(requestedProduct)
+})
+
+app.get('/message', (req, res) => {
+    res.json({'message' : 'Hello from your Express Bakend'})
 })
 
 app.listen(3000, ()=>{
